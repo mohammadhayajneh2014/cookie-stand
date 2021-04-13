@@ -1,0 +1,56 @@
+* {
+background-color:whitesmoke ;
+
+}
+ h1 {
+    
+background-color: #98ddca;
+color:#810034 ;
+text-align: center;
+margin:10px ; 
+
+}
+header h3{
+
+    background-color:#d5ecc2;
+    margin:10px ;  
+}
+ header h3 a {
+    background-color:#ffd3b4 ;
+color:#810034 ;
+ }
+ main h2 {
+     background-color: #ffaaa7;
+     color: 
+     #ff005c;
+    text-align: center;
+    margin:10px ; 
+
+ }
+ img{
+    
+     width: 400px;
+     height: 200px;
+ }
+ header div {
+display: block;
+
+ }
+
+ footer h3{
+   background-color:#ffc;
+   text-align: center;
+      margin:10px ;  
+ }
+ footer h3 a {
+    background-color:#ffd ;
+    color: #333;
+    
+ }
+
+ footer p{
+    background-color:#ffc;
+    text-align: left;   
+     color: #333;
+     margin:10px ; 
+  }
