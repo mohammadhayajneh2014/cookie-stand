@@ -5,8 +5,8 @@ let container = document.getElementById('render');
 let table = document.createElement('table');
 container.appendChild(table);
 
-let sumColom=[];
-
+let sumColom=0;
+var sumColomn=0;
 let arrayShop=[];
 
  function readHour(){
@@ -26,7 +26,6 @@ let arrayShop=[];
 function randomValue(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 
 function cookiesShop(name,min,max,avg){
     this.name =  name;
@@ -77,24 +76,6 @@ cookiesShop.prototype.getAverageCookisPerHour = function () {
 
 cookiesShop.prototype.total2 = function(){
 
-for(let i=0;i<hours.length;i++){
-    var totalColom=0;
-    for (let a =0; a<arrayShop.length ;a++) {
-        totalColom+=arrayShop[a].AverageCookisPerHour[i]
-          
-     sumColom=totalColom
-
-} 
-console.log('hallo from total',totalColom)
-console.log('hallo from location', sumColom)
-function sum(){
-    return sumColom
-}
-
-}
-
-
-
 }
 readHour();
 let th1 = document.createElement('th');
@@ -131,22 +112,28 @@ for(let i=0 ;i<arrayShop.length;i++){
     arrayShop[i].render();
     arrayShop[i].total2();
     
-    
-   
-    }
+  }  
     //Seattle.render();
     console.log(arrayShop);
-  
-     
-            
+                
 var tr2 = document.createElement('tr');
 table.appendChild(tr2);
 tr2.textContent ='total';
-for(let b=0;b<=hours.length ;b++){
 
+for(let i=0;i<hours.length;i++){
+    var totalColom=0;
     let td = document.createElement('td');
     tr2.appendChild(td);
-    td.textContent =this.sum();
-      
-} 
-//console.log(sumColom[b]);  
+    for (let a =0; a<arrayShop.length ;a++) {
+     sumColom = totalColom+=arrayShop[a].AverageCookisPerHour[i] 
+            
+}
+sumColomn=sumColomn+sumColom 
+    td.textContent =sumColom;
+//sumValue(sumColom);  
+console.log('hallo from total',totalColom)
+console.log('hallo from location', sumColom)
+}
+let td = document.createElement('td');
+tr2.appendChild(td);
+td.textContent =sumColomn;
