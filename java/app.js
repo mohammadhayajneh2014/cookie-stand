@@ -80,7 +80,7 @@ cookiesShop.prototype.total2 = function(){
 readHour();
 let th1 = document.createElement('th');
 table.appendChild(th1);
-th1.textContent = "total";
+th1.textContent = "total colomn";
 
 cookiesShop.prototype.render = function(){
 
@@ -105,20 +105,56 @@ x=x+this.AverageCookisPerHour[a];
     td.textContent =x;
 
 }
+
+
+let form = document.getElementById('cookie');
+form.addEventListener("submit",newone);
+function newone (event){
+    event.preventDefault();
+    //console.log(event);
+
+    let newName=event.target.cookiesName.value;
+console.log(newName);
+
+let minimum=event.target.min.value;
+minimum=parseInt(minimum)
+console.log(typeof minimum);
+
+let maximum=event.target.max.value;
+maximum=parseInt(maximum)
+console.log(typeof maximum);
+
+let avgAvg=event.target.avg.value;
+avgAvg=parseFloat(avgAvg)
+console.log(typeof avgAvg);
+
+let newsub = new cookiesShop(newName,minimum,maximum,avgAvg) 
+table.removeChild(table.lastElementChild);
+newsub.getcustumernumber();
+newsub.getAverageCookisPerHour();
+newsub.render();
+totalfun();
+
+} 
+
 for(let i=0 ;i<arrayShop.length;i++){
 
     arrayShop[i].getcustumernumber();
     arrayShop[i].getAverageCookisPerHour();
     arrayShop[i].render();
-    arrayShop[i].total2();
+    arrayShop[i].total2();  
     
-  }  
+  } 
+  totalfun(); 
     //Seattle.render();
     console.log(arrayShop);
-                
+
+
+    function totalfun (){
+
 var tr2 = document.createElement('tr');
 table.appendChild(tr2);
-tr2.textContent ='total';
+tr2.textContent ='total raw';
 
 for(let i=0;i<hours.length;i++){
     var totalColom=0;
@@ -137,3 +173,5 @@ console.log('hallo from location', sumColom)
 let td = document.createElement('td');
 tr2.appendChild(td);
 td.textContent =sumColomn;
+
+}
